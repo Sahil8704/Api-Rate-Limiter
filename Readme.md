@@ -8,7 +8,7 @@ The gateway dynamically isolates clients across service tiers (`Free`, `Premium`
 
 ## Architecture Overview
 
-
+'''text
 [ Client Request ] (Port 8080)
         │
         ▼
