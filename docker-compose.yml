@@ -1,0 +1,26 @@
+# Iska use tab hota hai jab aapko ek sath multiple containers 
+# (jaise Go app aur uske sath koi Redis ya database)
+# ek single command se chalane hon.
+
+version: '3.8'
+
+services:
+  # Component 1: The Redis State Engine
+  redis-db:
+    image: redis:7-alpine
+    container_name: infra-redis-engine
+
+  # Component 2: A Mock Core Backend Service (Using standard Nginx)
+  mock-backend:
+    image: nginx:alpine
+    container_name: core-application-service
+
+  # Component 3: Your Go Rate Limiter (The Entrypoint Gateway)
+  rate-limiter-proxy:
+    build: .
+    container_name: traffic-cop-proxy
+    ports:
+      - "8080:8080"
+    depends_on:
+      - redis-db
+      - mock-backend
