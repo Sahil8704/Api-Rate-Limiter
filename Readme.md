@@ -8,7 +8,7 @@ The gateway dynamically isolates clients across service tiers (`Free`, `Premium`
 
 
 ## Key Features
-⚬	Atomic Concurrency Control: Executes Token Bucket refills and token subtractions as a single unbroken atomic operation inside Redis using             custom Lua scripts, preventing data race conditions during high-volume concurrency bursts.
+⚬	Atomic Concurrency Control: Executes Token Bucket refills and token subtractions as a single unbroken atomic operation inside Redis using             custom Lua scripts, preventing data race conditions during high-volume concurrency bursts. //
 ⚬	Dynamic Multi-Tier Rate Limiting: Enforces distinct throughput constraints dynamically based on the incoming X-Client-Tier HTTP header:
 ⚬	Premium Tier: Capacity = 10 tokens, Refill Rate = 5 tokens/second
 ⚬	Free Tier: Capacity = 3 tokens, Refill Rate = 1 token/second
