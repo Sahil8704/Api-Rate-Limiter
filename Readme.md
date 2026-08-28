@@ -23,7 +23,9 @@ The gateway dynamically isolates clients across service tiers (`Free`, `Premium`
 ⚬	Live System Telemetry: Implements Prometheus instrumentation (/metrics) to monitor allowed vs. blocked traffic counters tagged by client tier.  
 
 ⚬	Isolated Virtual Network: Fully containerized using Docker Compose, orchestrating the Go proxy gateway, the Redis state engine, and an                upstream Nginx application over a private internal network.
-        Tech Stack
+
+
+#        Tech Stack
         
 ⚬	Core Service: Go (Golang 1.26+) 
 
